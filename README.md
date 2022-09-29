@@ -9,3 +9,4 @@ A little reminder to myself! ;-)
 | Checklist | Lab | Info |
 | :--- | :---: | ---: |
 | ✔️ | [Lab 1](https://github.com/marianneneuts/DEV5-LAB1) | GIT |
+| ✔️ | [Lab 2](https://github.com/marianneneuts/DEV5-myportfolio/tree/main/Lab%202) | ES6 Human Bingo |
