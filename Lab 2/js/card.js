@@ -24,6 +24,12 @@ export default class Card {
     // let card = document.createElement("div");
     // card.dataset.number = counter + 1;
     // don't forget to append the child to to DOM
+    let card = document.createElement("div");
+    card.classList.add("bingo__card");
+    card.setAttribute("data-card", counter);
+    card.innerHTML = this.title;
+    
+    document.querySelector(".bingo__board").appendChild(card);
 
     // 🔥🔥🔥 TODO4: when we click an item, we want to check for winners and we want to save the selection to storage
     card.addEventListener("click", (e) => {
