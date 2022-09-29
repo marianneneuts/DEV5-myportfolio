@@ -27,8 +27,7 @@ export default class Card {
     // don't forget to append the child to to DOM
     let card = document.createElement("div");
     card.classList.add("bingo__card");
-    card.setAttribute("data-card", counter);
-    card.dataset.number = counter + 1;
+    card.setAttribute("data-number", counter + 1);
     card.innerHTML = this.title;
 
     document.querySelector(".bingo__board").appendChild(card);
@@ -42,6 +41,10 @@ export default class Card {
 
       Bingo.checkWinner();
       Bingo.save();
+
+      if (document.querySelectorAll(".bingo__card--done").length > 5) {
+        e.target.classList.remove("bingo__card--done");
+      }
     });
   }
 }
