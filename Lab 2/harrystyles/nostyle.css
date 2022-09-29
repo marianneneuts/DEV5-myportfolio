@@ -25,6 +25,8 @@ body {
   font-size: 3vmin;
   padding: 0.2em;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .bingo__card--done {
