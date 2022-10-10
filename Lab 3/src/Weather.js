@@ -54,8 +54,8 @@ export default class Weather {
         img.alt = weather;
 
         document.querySelector('.weather__temp').innerText = "It's " + temp + "°C outside!";
-        document.querySelector('.weather__summary').innerText = "Whoa, look at that! It's " + weather;
-        document.querySelector('.weather__location').innerText = location;
+        document.querySelector('.weather__summary').innerText = "Whoa, look at that! It's " + weather + ".";
+        // document.querySelector('.weather__location').innerText = location;
         document.querySelector('.weather__icon').appendChild(img);
 
         if(temp <= 10){
