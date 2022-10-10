@@ -53,9 +53,37 @@ export default class Weather {
         img.src = data.current.condition.icon;
         img.alt = weather;
 
-        document.querySelector('.weather__temp').innerText = "It's " + temp + "°C outside! Time to watch...";
+        document.querySelector('.weather__temp').innerText = "It's " + temp + "°C outside!";
         document.querySelector('.weather__summary').innerText = "Whoa, look at that! It's " + weather;
         document.querySelector('.weather__location').innerText = location;
         document.querySelector('.weather__icon').appendChild(img);
+
+        if(temp <= 10){
+            this.getColdWeather();
+        }
+        else {
+            this.getHotWeather();
+        }
+    }
+
+    getColdWeather() {
+        // console.log("Cold weather.");
+        let url = "https://api.disneyapi.dev/characters";
+
+        fetch(url)
+        .then( result => {
+            return result.json();
+        })
+        .then((json)=>{
+            // console.log(json);
+            this.printColdWeather(json);
+        });
+    }
+
+    printColdWeather(json) {
+        let name = json.data[2].name;
+        let imageUrl = json.data[2].imageUrl;
+        document.querySelector(".disney__movie").src = imageUrl;
+        document.querySelector(".disney__title").innerHTML = "Time to watch... " + name + "! 😈🔥";
     }
 }
