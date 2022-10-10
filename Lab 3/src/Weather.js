@@ -44,6 +44,7 @@ export default class Weather {
     }
 
     displayWeather(data) {
+        // Weather API
         const temp = data.current.temp_c;
         const weather = data.current.condition.text;
         const location = data.location.name;
@@ -52,8 +53,8 @@ export default class Weather {
         img.src = data.current.condition.icon;
         img.alt = weather;
 
-        document.querySelector('.weather__temp').innerText = temp + "°C";
-        document.querySelector('.weather__summary').innerText = weather;
+        document.querySelector('.weather__temp').innerText = "It's " + temp + "°C outside! Time to watch...";
+        document.querySelector('.weather__summary').innerText = "Whoa, look at that! It's " + weather;
         document.querySelector('.weather__location').innerText = location;
         document.querySelector('.weather__icon').appendChild(img);
     }
