@@ -80,10 +80,31 @@ export default class Weather {
         });
     }
 
+    getHotWeather() {
+        // console.log("Cold weather.");
+        let url = "https://api.disneyapi.dev/characters";
+
+        fetch(url)
+        .then( result => {
+            return result.json();
+        })
+        .then((json)=>{
+            // console.log(json);
+            this.printHotWeather(json);
+        });
+    }
+
     printColdWeather(json) {
         let name = json.data[2].name;
         let imageUrl = json.data[2].imageUrl;
         document.querySelector(".disney__movie").src = imageUrl;
         document.querySelector(".disney__title").innerHTML = "Time to watch... " + name + "! 😈🔥";
+    }
+
+    printHotWeather(json) {
+        let name = json.data[42].name;
+        let imageUrl = json.data[42].imageUrl;
+        document.querySelector(".disney__movie").src = imageUrl;
+        document.querySelector(".disney__title").innerHTML = "Time to watch... " + name + "! 👩🐟";
     }
 }
