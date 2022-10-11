@@ -1,6 +1,6 @@
 #app {
   width: 336px;
-  height: 280px;
+  height: 555px;
 }
 
 .weather__summary {
@@ -27,6 +27,11 @@
   font-size: 15px;
   color: #fff;
   text-align: center;
+}
+
+.disney__logo {
+  width: 30%;
+  height: auto;
 }
 
 #app {

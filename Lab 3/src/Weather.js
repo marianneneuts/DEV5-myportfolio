@@ -97,6 +97,7 @@ export default class Weather {
     printColdWeather(json) {
         let name = json.data[2].name;
         let imageUrl = json.data[2].imageUrl;
+        document.querySelector("#app").style.backgroundColor = "#EB626C"; 
         document.querySelector(".disney__movie").src = imageUrl;
         document.querySelector(".disney__title").innerHTML = "Time to watch... " + name + " on Disney+! 😈🔥";
     }
@@ -104,6 +105,7 @@ export default class Weather {
     printHotWeather(json) {
         let name = json.data[42].name;
         let imageUrl = json.data[42].imageUrl;
+        (document.querySelector("#app").style.backgroundColor = "#FDC685");
         document.querySelector(".disney__movie").src = imageUrl;
         document.querySelector(".disney__title").innerHTML = "Time to watch... " + name + " on Disney+! 👩🐟";
     }
