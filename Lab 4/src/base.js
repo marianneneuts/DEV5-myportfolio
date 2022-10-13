@@ -20,8 +20,13 @@ export default class Base {
     }
 
     createSky() {
+        const textureLoader = new THREE.TextureLoader();
+        const spookyTexture = textureLoader.load('/textures/spooky-halloween.jpg');
+
         const geometry = new THREE.SphereGeometry(200, 32, 32);
-        const material = new THREE.MeshStandardMaterial({ color: 0x333333, side: THREE.BackSide });
+        const material = new THREE.MeshStandardMaterial({ color: 0x333333 });
+        material.map = spookyTexture;
+        material.side = THREE.BackSide;
         const sky = new THREE.Mesh(geometry, material);
         this.group.add(sky);
     }
