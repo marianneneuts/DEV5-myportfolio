@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Base from './src/base'
 import House from './src/house'
+import Skeleton from './src/skeleton'
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -28,6 +29,15 @@ scene.add(base.group);
 
 const house = new House();
 scene.add(house.group);
+
+for (let i = 0; i < 35; i++) {
+    const x = Math.random() * 80 - 40;
+    const z = Math.random() * 80 - 40;
+    if (x > 10 || x < -10 || z > 10 || z < -10) {
+        const skeleton = new Skeleton(x, z);
+        scene.add(skeleton.group);
+    }
+}
 
 function animate() {
 	requestAnimationFrame( animate );
