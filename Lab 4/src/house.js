@@ -6,6 +6,7 @@ export default class House {
         this.createWalls();
         this.createRoof();
         this.createDoor();
+        this.createWindow();
     }
 
     createWalls() {
@@ -56,5 +57,13 @@ export default class House {
         const door = new THREE.Mesh( geometry, material );
         door.position.set( -10, 6.25, 0 );
         this.group.add( door );
+    }
+
+    createWindow() {
+        const geometry = new THREE.BoxGeometry( 10, 10, 2 );
+        const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        const frame = new THREE.Mesh( geometry, material );
+        frame.position.set( 0, 7.5, 10 );
+        this.group.add( frame );
     }
 }
