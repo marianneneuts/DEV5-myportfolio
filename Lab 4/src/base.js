@@ -12,7 +12,7 @@ export default class Base {
         const leavesTexture = textureLoader.load('/textures/fallen-leaves.jpg');
 
         const geometry = new THREE.BoxGeometry(80, 0.1, 80);
-        const material = new THREE.MeshStandardMaterial({ color: 0x4d2c1f});
+        const material = new THREE.MeshStandardMaterial({ color: 0x4c0000 });
         material.map = leavesTexture;
         const ground = new THREE.Mesh(geometry, material);
         ground.position.y = -0.05;
