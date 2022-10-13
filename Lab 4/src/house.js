@@ -33,8 +33,12 @@ export default class House {
     }
 
     createRoof() {
+        const textureLoader = new THREE.TextureLoader();
+        const woodenTexture = textureLoader.load('/textures/wooden-roof.jpg');
+
         const geometry = new THREE.ConeGeometry( 20, 10, 4 );
-        const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        const material = new THREE.MeshStandardMaterial({ color: 0x333333});
+        material.map = woodenTexture;
         const roof = new THREE.Mesh( geometry, material );
         roof.position.y = 22.5;
         roof.rotation.y = Math.PI / 4;
