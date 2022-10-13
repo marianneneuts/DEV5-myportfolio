@@ -13,6 +13,10 @@ document.body.appendChild( renderer.domElement );
 const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);
 
+const directionalLight = new THREE.DirectionalLight( 0xffffff, 0.5 );
+directionalLight.position.set( 50, 75, 0 );
+scene.add( directionalLight );
+
 const controls = new OrbitControls( camera, renderer.domElement );
 
 camera.position.set( 0, 20, 100 );
