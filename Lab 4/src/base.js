@@ -4,6 +4,7 @@ export default class Base {
     constructor() {
         this.group = new THREE.Group();
         this.createGround();
+        this.createSky();
     }
 
     createGround() {
@@ -12,5 +13,12 @@ export default class Base {
         const ground = new THREE.Mesh(geometry, material);
         ground.position.y = -0.05;
         this.group.add(ground);
+    }
+
+    createSky() {
+        const geometry = new THREE.SphereGeometry(200, 32, 32);
+        const material = new THREE.MeshStandardMaterial({ color: 0x333333, side: THREE.BackSide });
+        const sky = new THREE.Mesh(geometry, material);
+        this.group.add(sky);
     }
 }
