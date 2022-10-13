@@ -60,10 +60,14 @@ export default class House {
     }
 
     createWindow() {
-        const geometry = new THREE.BoxGeometry( 10, 10, 2 );
+        const textureLoader = new THREE.TextureLoader();
+        const myTexture = textureLoader.load('/textures/marianne.png');
+
+        const geometry = new THREE.BoxGeometry( 15, 7.5, 2 );
         const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        material.map = myTexture;
         const frame = new THREE.Mesh( geometry, material );
-        frame.position.set( 0, 7.5, 10 );
+        frame.position.set( 0, 8.5, 10 );
         this.group.add( frame );
     }
 }
