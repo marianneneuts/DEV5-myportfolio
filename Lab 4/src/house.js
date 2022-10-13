@@ -47,8 +47,12 @@ export default class House {
     }
 
     createDoor() {
-        const geometry = new THREE.BoxGeometry( 2.5, 12.5, 7.5 );
-        const material = new THREE.MeshStandardMaterial({ color: 0x000000 });
+        const textureLoader = new THREE.TextureLoader();
+        const creepyTexture = textureLoader.load('/textures/creepy-hands.jpg');
+
+        const geometry = new THREE.BoxGeometry( 2, 12.5, 7.5 );
+        const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        material.map = creepyTexture;
         const door = new THREE.Mesh( geometry, material );
         door.position.set( -10, 6.25, 0 );
         this.group.add( door );
