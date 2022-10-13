@@ -4,6 +4,7 @@ export default class House {
     constructor() {
         this.group = new THREE.Group();
         this.createWalls();
+        this.createRoof();
     }
 
     createWalls() {
@@ -29,5 +30,14 @@ export default class House {
         this.group.add( wall2 );
         this.group.add( wall3 );
         this.group.add( wall4 );
+    }
+
+    createRoof() {
+        const geometry = new THREE.ConeGeometry( 20, 10, 4 );
+        const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        const roof = new THREE.Mesh( geometry, material );
+        roof.position.y = 22.5;
+        roof.rotation.y = Math.PI / 4;
+        this.group.add( roof );
     }
 }
