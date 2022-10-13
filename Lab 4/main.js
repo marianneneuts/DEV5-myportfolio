@@ -9,6 +9,9 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+const ambientLight = new THREE.AmbientLight(0xffffff);
+scene.add(ambientLight);
+
 const controls = new OrbitControls( camera, renderer.domElement );
 
 camera.position.set( 0, 20, 100 );
