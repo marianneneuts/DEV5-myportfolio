@@ -7,8 +7,12 @@ export default class House {
     }
 
     createWalls() {
+        const textureLoader = new THREE.TextureLoader();
+        const rottenTexture = textureLoader.load('/textures/rotten-wood.jpg');
+
         const geometry = new THREE.BoxGeometry( 20, 20, 1 );
         const material = new THREE.MeshStandardMaterial({ color: 0xaaaaaa });
+        material.map = rottenTexture;
         const wall1 = new THREE.Mesh( geometry, material );
         const wall2 = new THREE.Mesh( geometry, material );
         const wall3 = new THREE.Mesh( geometry, material );
