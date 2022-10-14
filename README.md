@@ -11,3 +11,4 @@ A little reminder to myself! ;-)
 | ✔️ | [Lab 1](https://github.com/marianneneuts/DEV5-LAB1) | GIT |
 | ✔️ | [Lab 2](https://github.com/marianneneuts/DEV5-myportfolio/tree/main/Lab%202) | ES6 Human Bingo |
 | ✔️ | [Lab 3](https://github.com/marianneneuts/DEV5-myportfolio/tree/main/Lab%203) | Location and API based advertisement |
+| ✔️ | [Lab 4](https://github.com/marianneneuts/DEV5-myportfolio/tree/main/Lab%204) | THREEJS |
