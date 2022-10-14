@@ -39,7 +39,11 @@ for (let i = 0; i < 35; i++) {
     }
 }
 
+scene.fog = new THREE.Fog(0xaaaaaa, 0, 300);
+
 function animate() {
+    camera.position.x = Math.sin(Date.now() / 2500) * 75;
+
 	requestAnimationFrame( animate );
     controls.update();
 	renderer.render( scene, camera );
