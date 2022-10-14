@@ -39,6 +39,8 @@ for (let i = 0; i < 35; i++) {
     }
 }
 
+scene.fog = new THREE.Fog(0xaaaaaa, 0, 300);
+
 function animate() {
 	requestAnimationFrame( animate );
     controls.update();
